@@ -40,24 +40,20 @@ public void setCpf(String cpf) {
 	this.cpf = cpf;
 }
 
-public Date stringParaData(String stringData) {
+static public Date stringParaData(String stringData) throws ParseException {
 	SimpleDateFormat sdf1= new SimpleDateFormat("dd/MM/yyyy");
 	Date data = new Date();
-	try {
-		data = sdf1.parse(stringData);
-	}catch (ParseException e){
-		System.out.println("erro");
-	}
+	data = sdf1.parse(stringData);
 	
-			return data;
+	return data;
 }
 
 
-public static void main(String[] args) {
+public static void main(String[] args) throws ParseException {
 	Estudante e1 = new Estudante("joka","00000000");
 	Date novaData = new Date();
-	novaData = stringParaData("14/03/2000");
-	e1.setDataNascimento( novaData );
+	novaData = Estudante.stringParaData("14/03/2000");
+	e1.setDataNascimento( Estudante.stringParaData("14/03/2000") );
 	System.out.println(e1.getDataNascimento());
 }
 
