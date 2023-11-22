@@ -61,10 +61,12 @@ public class Calculadora {
 		Scanner s = new Scanner(System.in);
 		double num1, num2;
 		char op;
+		
 		System.out.println("Digite dois numeros reais");
 		num1 = s.nextDouble();
 		num2 = s.nextDouble();
 		Calculadora op1 = new Calculadora(num1,num2);
+		
 		System.out.println("Digite o caracter da operacao (+,-,*,/)");
 		op = s.next().charAt(0);
 		
