@@ -39,7 +39,9 @@ public String getCpf() {
 public void setCpf(String cpf) {
 	this.cpf = cpf;
 }
-
+public void imprimirData() {
+	System.out.println(this.dataNascimento);
+}
 static public Date stringParaData(String stringData) throws ParseException {
 	SimpleDateFormat sdf1= new SimpleDateFormat("dd/MM/yyyy");
 	Date data = new Date();
@@ -51,8 +53,6 @@ static public Date stringParaData(String stringData) throws ParseException {
 
 public static void main(String[] args) throws ParseException {
 	Estudante e1 = new Estudante("joka","00000000");
-	Date novaData = new Date();
-	novaData = Estudante.stringParaData("14/03/2000");
 	e1.setDataNascimento( Estudante.stringParaData("14/03/2000") );
 	System.out.println(e1.getDataNascimento());
 }
